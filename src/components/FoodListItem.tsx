@@ -17,7 +17,7 @@ export const FoodListItem = ({ items }) => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "gainsboro",
+    backgroundColor: "#f6f6f8",
     padding: 10,
     borderRadius: 5,
     flexDirection: "row",
