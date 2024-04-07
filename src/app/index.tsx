@@ -1,16 +1,20 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { FoodListItem } from "../components/FoodListItem";
 
-
-
+const FoodItems = [
+  { Lable: "Pizza", Cal: "350", Brand: "Dominos" },
+  { Lable: "Apple", Cal: "55", Brand: "Generic" },
+  { Lable: "Coffee", Cal: "100", Brand: "Americano" }
+]
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* Food Items Container */}
-      <FoodListItem items={{ Lable: "Pizza", Cal: "350", Brand: "Dominos" }} />
-      <FoodListItem items={{ Lable: "Apple", Cal: "15", Brand: "Generic" }} />
+      <FlatList
+        data={FoodItems}
+        renderItem={({ item }) => <FoodListItem items={item} />}
+        contentContainerStyle={{ gap: 5 }}
+      />
     </View>
   );
 }
@@ -19,8 +23,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center",
-    padding: 10,
-    gap: 5
+    padding: 12,
   },
 });
